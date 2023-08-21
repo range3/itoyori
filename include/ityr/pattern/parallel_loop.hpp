@@ -622,7 +622,7 @@ inline T transform_reduce(const ExecutionPolicy& policy,
     return transform_reduce(policy, first_, last_, identity, binary_reduce_op, unary_transform_op);
   }
 
-  auto accumulate_op = [=](T& acc, const auto& v) {
+  auto accumulate_op = [=](T& acc, const auto& v) mutable {
     acc = binary_reduce_op(acc, unary_transform_op(v));
   };
 
