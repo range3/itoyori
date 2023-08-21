@@ -1,0 +1,40 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/cpp
+{
+  "name": "C++ on Debian 12",
+  // "build": {
+  //   "dockerfile": "Dockerfile"
+  // },
+  "dockerComposeFile": [
+    "./docker-compose.yaml"
+  ],
+  "service": "h1",
+  "workspaceFolder": "/workspaces/itoyori",
+  "remoteEnv": {
+    "EDITOR": "${localEnv:EDITOR}"
+  },
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "terminal.integrated.defaultProfile.linux": "bash-login",
+        "terminal.integrated.profiles.linux.bash-login": {
+          "path": "bash",
+          "args": [
+            "-l"
+          ]
+        }
+      },
+      "extensions": [
+        "eamodio.gitlens",
+        "ms-vscode.cmake-tools",
+        "ms-vscode.cpptools-extension-pack",
+        "ms-python.python",
+        "ms-python.vscode-pylance",
+        "ms-toolsai.jupyter",
+        "KevinRose.vsc-python-indent",
+        "cheshirekow.cmake-format",
+        "GitHub.copilot"
+      ]
+    }
+  }
+}
